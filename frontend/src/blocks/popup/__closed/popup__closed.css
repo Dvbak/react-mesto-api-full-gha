@@ -1,0 +1,26 @@
+.popup__closed {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  padding: 0;
+  background: none;
+  border: none;
+  transition: opacity .3s linear;
+}
+
+.popup__closed:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+.popup__closed:focus {
+  opacity: .6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 635px) {
+  .popup__closed {
+    top: -36px;
+    right: 0;
+  }
+}

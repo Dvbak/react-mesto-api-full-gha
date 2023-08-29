@@ -1,0 +1,21 @@
+.profile__btn-add {
+  width: 150px;
+  height: 50px;
+  flex-shrink: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 2px solid #fff;
+  transition: opacity .3s linear;
+  border-radius: 2px;
+}
+
+.profile__btn-add:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 635px) {
+  .profile__btn-add {
+    width: 100%;
+  }
+}

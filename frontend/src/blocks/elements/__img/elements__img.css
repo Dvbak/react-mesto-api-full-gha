@@ -1,0 +1,13 @@
+.elements__img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px 10px 0 0;
+  transition: transform .3s linear;
+}
+
+.elements__img:hover {
+  transform: scale(1.01);
+  /* при наведении сделал небольшое увеличение картинки, если просто изменить курсор, то будут сливаться два наведения: появление большой фотографии и удаление */
+}

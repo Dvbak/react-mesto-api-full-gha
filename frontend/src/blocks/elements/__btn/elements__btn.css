@@ -1,0 +1,20 @@
+.elements__btn {
+  width: 22px;
+  height: 19px;
+  flex-shrink: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  background-image: url(../../../images/icon/heart.svg);
+  transition: opacity .3s linear;
+}
+
+.elements__btn:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+
+.elements__btn:focus {
+  outline: none;
+  opacity: .5;
+}

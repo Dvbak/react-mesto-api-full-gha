@@ -1,0 +1,7 @@
+@media screen and (max-width: 720px) {
+  .profile__pic-edit {
+    width: 7.5px;
+    height: 7.5px;
+    margin-bottom: 3px;
+  }
+}

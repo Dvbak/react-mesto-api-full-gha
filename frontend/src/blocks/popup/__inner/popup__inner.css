@@ -1,0 +1,13 @@
+.popup__inner {
+  position: relative;
+  /* transform: scale(0); */
+  /* transform: translate(0px, -100%); */
+  transform: perspective(500px) translate(0px, -100%) rotateX(45deg) scale(50%);
+  transition: all .4s linear;
+  }
+
+  .popup.popup_opened .popup__inner {
+  /* transform: scale(1); */
+  /* transform: translate(0px, 0px); */
+  transform: perspective(500px) translate(0px, 0px) rotateX(0deg) scale(100%);
+  }
