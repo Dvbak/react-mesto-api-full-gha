@@ -7,6 +7,7 @@ const { errors } = require('celebrate');
 const cors = require('cors');
 const NotFoundError = require('./errors/NotFoundError');
 const errorHandler = require('./middlewares/error-handler');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
@@ -24,7 +25,6 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
 });
-app.use(limiter);
 
 app.use(helmet());
 
@@ -32,6 +32,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(DB_URL);
+
+app.use(requestLogger);
+app.use(limiter);
 
 app.use('/signup', routerRegistration);
 app.use('/signin', routerLogin);
@@ -42,6 +45,8 @@ app.use('/cards', routerCards);
 app.use('*', (req, res, next) => {
   next(new NotFoundError('Такой страницы не существует'));
 });
+
+app.use(errorLogger);
 
 app.use(errors());
 
