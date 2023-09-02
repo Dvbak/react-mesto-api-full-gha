@@ -140,13 +140,15 @@ function App() {
   }
 
   useEffect(() => {
-    Promise.all([api.getInfo(localStorage.token), api.getInitialCards(localStorage.token)])
-    .then(([dataUser, dataCards]) => {
-      setCurrentUser(dataUser);
-      setCards(dataCards);
-    })
-    .catch(err => console.error('Ошибка загрузки страницы: ', err.message))
-  }, [])
+    if (loggedIn) {
+      Promise.all([api.getInfo(localStorage.token), api.getInitialCards(localStorage.token)])
+      .then(([dataUser, dataCards]) => {
+        setCurrentUser(dataUser);
+        setCards(dataCards);
+      })
+      .catch(err => console.error('Ошибка загрузки страницы: ', err.message))
+    }
+  }, [loggedIn])
 
   function handleRegister(email, password) {
     setIsDemand(true);
@@ -182,7 +184,6 @@ function App() {
 
   useEffect(() => {
     if (localStorage.token) {
-      console.log(localStorage.token);
       getUserData(localStorage.token)
         .then((res) => {
           setUserEmail(res.email)
