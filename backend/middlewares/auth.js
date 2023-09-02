@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const { SECRET_KEY = 'secret signature key' } = process.env;
 const UnautorizedError = require('../errors/UnautorizedError');
 
+console.log(SECRET_KEY);
 const auth = (req, res, next) => {
   const { authorization } = req.headers;
   if (!authorization || !authorization.startsWith('Bearer ')) {
