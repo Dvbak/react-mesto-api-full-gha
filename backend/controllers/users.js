@@ -2,6 +2,8 @@ const httpConstants = require('http2').constants;
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
+const { SECRET_KEY = 'secret signature key' } = process.env;
 const BadRequestError = require('../errors/BadRequestError');
 const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
@@ -35,7 +37,8 @@ const login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        'secret signature key',
+        // 'secret signature key',
+        SECRET_KEY,
         { expiresIn: '7d' },
       );
       res.send({ token });
