@@ -111,15 +111,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://localhost:3000',
+  // baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.mesto-full.dvbak.nomoredomainsicu.ru',
 });
-
-// const api = new Api({
-//   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
-//   headers: {
-//     authorization: 'd0edf2d6-11aa-4cde-8f41-dce7ef9dc184',
-//     'Content-Type': 'application/json'
-//   }
-// });
 
 export default api;
