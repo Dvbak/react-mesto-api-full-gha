@@ -10,7 +10,7 @@
 
 ## Ссылки на проект
 
-IP-адрес <84.201.158.41>
+IP <84.201.158.41>
 
 Frontend https://mesto-full.dvbak.nomoredomainsicu.ru
 
