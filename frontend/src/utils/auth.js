@@ -1,5 +1,5 @@
-// const baseUrl = 'https://api.mesto-full.dvbak.nomoredomainsicu.ru';
-const baseUrl = 'http://localhost:3000';
+const baseUrl = 'https://api.mesto-full.dvbak.nomoredomainsicu.ru';
+// const baseUrl = 'http://localhost:3000';
 
 function checkResponse(res) {
   if(res.ok) {
