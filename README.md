@@ -10,8 +10,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 84.201.158.41
 
-Frontend https://...
+Frontend https://mesto-full.dvbak.nomoredomainsicu.ru
 
-Backend https://...
+Backend https://api.mesto-full.dvbak.nomoredomainsicu.ru

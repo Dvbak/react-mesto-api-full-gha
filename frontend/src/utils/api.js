@@ -111,8 +111,8 @@ class Api {
 }
 
 const api = new Api({
-  // baseUrl: 'http://localhost:3000',
-  baseUrl: 'https://api.mesto-full.dvbak.nomoredomainsicu.ru',
+  baseUrl: 'http://localhost:3000',
+  // baseUrl: 'https://api.mesto-full.dvbak.nomoredomainsicu.ru',
 });
 
 export default api;
