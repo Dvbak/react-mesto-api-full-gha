@@ -6,14 +6,14 @@ const cardSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Поле должно быть заполнено'],
 
-    minlength: 2,
-    maxlength: 30,
-    validate: {
-      validator({ length }) {
-        return (length >= 2 && length <= 30);
-      },
-      message: 'Имя должно быть длиной от 2 до 30 символов',
-    },
+    minlength: [2, 'Минимальная длина имени - 2 символа'],
+    maxlength: [30, 'Максимальная длина имени - 30 символов'],
+    // validate: {
+    //   validator({ length }) {
+    //     return (length >= 2 && length <= 30);
+    //   },
+    //   message: 'Имя должно быть длиной от 2 до 30 символов',
+    // },
   },
   link: {
     type: String,

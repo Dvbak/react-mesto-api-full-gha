@@ -7,7 +7,7 @@ console.log(SECRET_KEY);
 const auth = (req, res, next) => {
   const { authorization } = req.headers;
   if (!authorization || !authorization.startsWith('Bearer ')) {
-    throw new UnautorizedError('Необходима авторизация');
+    return next(new UnautorizedError('Необходима авторизация'));
   }
   const token = authorization.replace('Bearer ', '');
 
@@ -18,11 +18,11 @@ const auth = (req, res, next) => {
       NODE_ENV === 'production' ? SECRET_KEY : 'secret signature key',
     );
   } catch (err) {
-    throw new UnautorizedError('Необходима авторизация');
+    return next(new UnautorizedError('Необходима авторизация'));
   }
 
   req.user = payload;
-  next();
+  return next();
 };
 
 module.exports = auth;
